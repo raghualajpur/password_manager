@@ -1,0 +1,83 @@
+.password-boxes {
+  border: 1px solid #7683cb;
+  margin: 10px 0px 20px -20px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  max-width: 800px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border-radius: 8px;
+}
+
+.logo {
+  padding: 0px 15px 0px 15px;
+}
+
+.head-logo {
+  padding: 10px 15px 10px 15px;
+  border-radius: 50px;
+  font-family: 'Roboto';
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+}
+
+.pass-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+
+.delete-img {
+  width: 30px;
+}
+
+.content-of-passwords {
+  color: #ffffff;
+  font-family: 'Roboto';
+}
+
+.stars-img{
+    width: 120px;
+    height: 20px;
+    padding-bottom: 5px;
+}
+
+.password-texts{
+    font-size: 14px;
+}
+
+
+.red{
+    background-color: #b91c1c;
+}
+
+.yellow{
+    background-color: #f59e0b;
+}
+.green{
+    background-color: #10b981;
+}
+.orange{
+    background-color: #f97316;
+}
+.blue{
+    background-color: #0ea5e9;
+}
+.parrot-green{
+    background-color:  #14b8a6;
+}
+.grey{
+    background-color: #64748b;
+}
+.dark-blue{
+    background-color:  #0b69ff;
+}
