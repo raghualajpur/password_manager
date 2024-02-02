@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import {v4 as uuIdv4} from 'uuid'
-import PasswordItem from '../PasswordItem'
 import './index.css'
 
 const colors = [
@@ -175,7 +174,7 @@ class PasswordManager extends Component {
                 onChange={this.onChangeSearchKey}
                 value={searchingKey}
                 id="search-input"
-                placeholder="Enter Website"
+                placeholder="Search"
                 className="inputs search"
                 type="search"
               />
@@ -193,15 +192,47 @@ class PasswordManager extends Component {
             </label>
           </div>
           <ul className="list-of-passwords">
-            {passwords.map(each => (
-              <PasswordItem
-                showPass={showPassword}
-                details={each}
-                func={this.onClickDeletePassword}
-                key={each.id}
-                bgColor={colors[Math.floor(Math.random() * colors.length)]}
-              />
-            ))}
+            {passwords.map(each => {
+              const onDelete = () => {
+                this.onClickDeletePassword(each.id)
+              }
+              return (
+                <li key={each.id} className="password-boxes">
+                  <div className="pass-content">
+                    <div className="logo">
+                      <h1 className="head-logo">
+                        {each.website.slice(0, 1).toUpperCase()}
+                      </h1>
+                    </div>
+                    <div className="content-of-passwords">
+                      <p>{each.website}</p>
+                      <p>{each.username}</p>
+                      {showPassword ? (
+                        <p className="password-texts">{each.password}</p>
+                      ) : (
+                        <img
+                          className="stars-img"
+                          src="https://assets.ccbp.in/frontend/react-js/password-manager-stars-img.png"
+                          alt="stars"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <button
+                    onClick={onDelete}
+                    data-testid="delete"
+                    className="delete-button"
+                    type="button"
+                  >
+                    <img
+                      className="delete-img"
+                      src="https://assets.ccbp.in/frontend/react-js/password-manager-delete-img.png"
+                      alt="delete"
+                    />
+                  </button>
+                </li>
+              )
+            })}
           </ul>
           {passwords.length === 0 && (
             <div className="no-pass-container">
